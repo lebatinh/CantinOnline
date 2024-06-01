@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemRice"
+        android:title="Cơm"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/itemVegetarian"
+        android:title="Trái cây"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/itemPho"
+        android:title="Bún, Phở, Mì"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/itemDrink"
+        android:title="Đồ uống"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/itemDesserts"
+        android:title="Món tráng miệng"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/itemSnack"
+        android:title="Đồ ăn vặt"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/itemSale"
+        android:title="Vật phẩm khác"
+        app:showAsAction="withText" />
+</menu>

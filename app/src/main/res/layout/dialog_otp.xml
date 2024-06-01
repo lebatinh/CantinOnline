@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialog_otp_input"
+    android:padding="10dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="Nhập mã OTP"
+        app:shapeAppearanceOverlay="@style/corner_20">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextOTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="1234567890"
+            android:drawablePadding="15dp"
+            android:maxLength="6"
+            android:drawableTint="@color/black"
+            android:inputType="textNoSuggestions|textVisiblePassword"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/resendotp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textSize="@dimen/text_describe"
+        android:layout_margin="15dp"
+        android:drawableRight="@drawable/reload"
+        android:text="@string/resendOTP"
+        android:textStyle="bold" />
+
+</LinearLayout>

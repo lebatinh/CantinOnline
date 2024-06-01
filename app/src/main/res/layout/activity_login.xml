@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginLGViewModel"
+            type="com.example.startopenapp.account.login.LGViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#52FF8800"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="#00838F"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="25dp"
+                android:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/phonenumber"
+                    app:shapeAppearanceOverlay="@style/corner_20">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:maxLength="10"
+                        android:drawableEnd="@android:drawable/stat_sys_phone_call"
+                        android:drawablePadding="15dp"
+                        android:drawableTint="@color/black"
+                        android:inputType="textNoSuggestions|textVisiblePassword"
+                        android:text="@={loginLGViewModel.phoneNumber}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_describe"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck,VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/password"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black"
+                    app:shapeAppearanceOverlay="@style/corner_20">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtMk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="20"
+                        android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                        android:inputType="textNoSuggestions|textVisiblePassword"
+                        android:text="@={loginLGViewModel.password}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_describe"
+                        android:textStyle="bold|italic"
+                        tools:ignore="VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Mã sinh viên"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black"
+                    app:shapeAppearanceOverlay="@style/corner_20">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtStdId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="10"
+                        android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                        android:inputType="textNoSuggestions|textVisiblePassword"
+                        android:text="@={loginLGViewModel.stdid}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_describe"
+                        android:textStyle="bold|italic"
+                        tools:ignore="VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/txtswitchToForgotPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="15dp"
+                    android:onClick="@{()-> loginLGViewModel.switchToForgotPass(txtswitchToForgotPass.getContext())}"
+                    android:text="@string/forgot"
+                    android:textSize="@dimen/text_describe"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/login"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_button"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/bg_button"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/txtswithToSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:onClick="@{()-> loginLGViewModel.switchToSignUp(txtswithToSignUp.getContext())}"
+                    android:text="@string/exchange_sign_up"
+                    android:textSize="@dimen/text_describe" />
+
+                <TextView
+                    android:id="@+id/txtswithToChangePass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:onClick="@{()-> loginLGViewModel.switchToChangePass(txtswithToChangePass.getContext())}"
+                    android:text="@string/exchange_change_pass"
+                    android:textSize="@dimen/text_describe" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signUpSUViewModel"
+            type="com.example.startopenapp.account.signup.SUViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5243E49E">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="center"
+                android:text="@string/sign_up"
+                android:textColor="#00838F"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    android:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/phonenumber"
+                        app:shapeAppearanceOverlay="@style/corner_20">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtTk_Dk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890"
+                            android:maxLength="10"
+                            android:text="@={signUpSUViewModel.phoneNumber}"
+                            android:drawableEnd="@android:drawable/stat_sys_phone_call"
+                            android:drawablePadding="15dp"
+                            android:drawableTint="@color/black"
+                            android:inputType="textNoSuggestions|textPhonetic"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_describe"
+                            android:textStyle="bold"
+                            tools:ignore="TextSizeCheck,VisualLintTextFieldSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Mã Sinh viên"
+                        app:shapeAppearanceOverlay="@style/corner_20"
+                        tools:ignore="HardcodedText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtMaNv_Dk"
+                            android:maxLength="10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@android:drawable/ic_dialog_info"
+                            android:text="@={signUpSUViewModel.std_id}"
+                            android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                            android:drawablePadding="15dp"
+                            android:drawableTint="@color/black"
+                            android:inputType="textNoSuggestions|textVisiblePassword"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_describe"
+                            android:textStyle="bold|italic"
+                            tools:ignore="SpeakableTextPresentCheck,TextSizeCheck,VisualLintTextFieldSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Họ và tên"
+                        app:shapeAppearanceOverlay="@style/corner_20"
+                        tools:ignore="HardcodedText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtName_Dk"
+                            android:maxLength="45"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@android:drawable/ic_dialog_info"
+                            android:text="@={signUpSUViewModel.name}"
+                            android:drawablePadding="15dp"
+                            android:drawableTint="@color/black"
+                            android:inputType="textPersonName"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_describe"
+                            android:textStyle="bold|italic"
+                            tools:ignore="SpeakableTextPresentCheck,TextSizeCheck,VisualLintTextFieldSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="@string/password"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:shapeAppearanceOverlay="@style/corner_20">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtMk_Dk1"
+                            android:maxLength="20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                            android:text="@={signUpSUViewModel.password}"
+                            android:inputType="textNoSuggestions|textVisiblePassword"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_describe"
+                            android:textStyle="bold|italic"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="@string/confirm_pass"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:shapeAppearanceOverlay="@style/corner_20">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLength="20"
+                            android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                            android:inputType="textNoSuggestions|textVisiblePassword"
+                            android:textColor="@color/black"
+                            android:text="@={signUpSUViewModel.repassword}"
+                            android:textSize="@dimen/text_describe"
+                            android:textStyle="bold|italic"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnContinueSU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/go_on"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_button"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/bg_button"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <TextView
+                        android:id="@+id/txtswithToLoginSU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="@string/back_to_log_in"
+                        android:textSize="@dimen/text_describe"
+                        tools:ignore="TextContrastCheck" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

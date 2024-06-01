@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context=".account.forgotpass.ForgotPassFragment">
+
+<data>
+
+    <variable
+        name="forgotFGViewModel"
+        type="com.example.startopenapp.account.forgotpass.FPViewModel" />
+</data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#52FF8800"
+    android:weightSum="8">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:gravity="center"
+        android:text="@string/forgotpass"
+        android:textColor="#00838F"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="25dp"
+                android:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="@string/phonenumber"
+                    app:shapeAppearanceOverlay="@style/corner_20">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTk_Dn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:maxLength="10"
+                        android:drawableEnd="@android:drawable/stat_sys_phone_call"
+                        android:text="@={forgotFGViewModel.phoneNumber}"
+                        android:drawablePadding="15dp"
+                        android:drawableTint="@color/black"
+                        android:inputType="textNoSuggestions|textVisiblePassword"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_describe"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck,VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/student_number"
+                    app:shapeAppearanceOverlay="@style/corner_20">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtMk_Dn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                        android:text="@={forgotFGViewModel.id}"
+                        android:maxLength="10"
+                        android:inputType="textNoSuggestions|textVisiblePassword"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_describe"
+                        android:textStyle="bold|italic"
+                        tools:ignore="VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnContinueFG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/go_on"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_button"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/bg_button"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/txtswithToLoginFP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/back_to_log_in"
+                    android:textSize="@dimen/text_describe" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
+</layout>

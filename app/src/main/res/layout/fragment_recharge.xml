@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".admin.approve_request.viewpager.RechargeFragment">
+
+    <data>
+
+        <variable
+            name="rechargeViewModel"
+            type="com.example.startopenapp.main.main_screen.account.money.MoneyViewModel" />
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvRecharge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+</layout>
