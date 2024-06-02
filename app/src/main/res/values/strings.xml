@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Căn Tin Online</string>
     <string name="title">Điều khoản sử dụng</string>
-    <string name="clause">Chưa biết điều khoản gì cả :))</string>
+    <string name="clause">-Không gian lận trục lợi cá nhân \n-Thực hiên đúng, đủ các yêu cầu của trường về công tác vệ sinh an toàn thực phẩm và sử dụng thực phẩm trong khuôn viên trường\n-Sử dụng tài nguyên hợp lý, tránh lãng phí</string>
     <string name="login">Đăng nhập</string>
     <string name="text_clause">Đồng ý với các điều khoản của ứng dụng</string>
     <string name="phonenumber">Số điện thoại</string>
