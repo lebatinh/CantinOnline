@@ -45,7 +45,7 @@ public class MessageService extends FirebaseMessagingService {
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(message.getNotification().getBody()));
         builder.setAutoCancel(true);
         builder.setVibrate(pattern);
-        builder.setSmallIcon(R.drawable.cantin);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setPriority(Notification.PRIORITY_MAX);
 
         notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
