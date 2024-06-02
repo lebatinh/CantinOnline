@@ -80,7 +80,6 @@ public class ChangePassFragmentConfirm extends Fragment {
 
         // Thiết lập onClickListener cho thành phần view
         binding.btnChangePass.setOnClickListener(view -> cpViewModel.onClickChangePass(requireActivity()));
-        binding.backToChangePass.setOnClickListener(view -> getActivity().getSupportFragmentManager().popBackStack());
 
         // Trả về root view của fragment
         return rootview;
