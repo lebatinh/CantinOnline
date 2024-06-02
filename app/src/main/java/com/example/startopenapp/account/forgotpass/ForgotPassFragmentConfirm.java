@@ -78,7 +78,6 @@ public class ForgotPassFragmentConfirm extends Fragment {
 
         // Thiết lập onClickListener cho thành phần view
         binding.btnConfirmFP.setOnClickListener(view -> fpViewModel.onClickForgotPass(requireActivity()));
-        binding.backToForgotPass.setOnClickListener(view -> getActivity().getSupportFragmentManager().popBackStack());
 
         return rootView;
     }
