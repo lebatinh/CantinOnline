@@ -1,11 +1,12 @@
 package com.example.startopenapp.admin.cashier;
 
 public class Bill {
-    private String oderId,accId , price, receiver, phone, paymentmethod, time;
+    private String oderId,accId ,content, price, receiver, phone, paymentmethod, time;
 
-    public Bill(String oderId, String accId, String price, String receiver, String phone, String paymentmethod, String time) {
+    public Bill(String oderId, String accId, String content, String price, String receiver, String phone, String paymentmethod, String time) {
         this.oderId = oderId;
         this.accId = accId;
+        this.content = content;
         this.price = price;
         this.receiver = receiver;
         this.phone = phone;
@@ -27,6 +28,14 @@ public class Bill {
 
     public void setAccId(String accId) {
         this.accId = accId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getPrice() {

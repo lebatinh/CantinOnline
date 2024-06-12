@@ -7,21 +7,18 @@ import static com.example.startopenapp.display_manager.TimeHelper.getFormattedTi
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.example.startopenapp.R;
-import com.example.startopenapp.admin.approve_request.recharge_list.Approve;
 import com.example.startopenapp.display_manager.NetworkChangeReceiver;
-import com.example.startopenapp.main.home.order.BuyProduct;
-import com.example.startopenapp.main.home.order.ItemAdapter;
-import com.example.startopenapp.main.home.product.Product;
-import com.example.startopenapp.main.home.product.ProductActivity;
 import com.example.startopenapp.retrofit.ConnectToServer;
 import com.example.startopenapp.retrofit.RetrofitManager;
 
@@ -39,8 +36,10 @@ public class CashierActivity extends AppCompatActivity {
     private List<Bill> billList;
     private RecyclerView rcvBill;
     private BillAdapter billAdapter;
+    private SwipeRefreshLayout swiperefreshlayoutAC;
     private NetworkChangeReceiver networkChangeReceiver;
     private String accId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +67,22 @@ public class CashierActivity extends AppCompatActivity {
             String orderId = clickedItem.getOderId();
             String id = clickedItem.getAccId();
             DialogWarning1(CashierActivity.this, "Bạn muốn duyệt đơn hay hủy bỏ đơn này?",
-                    "Hoàn thành", (dialog, which) -> sendAccept(orderId, id),
-                    "Từ chối", (dialog, which) -> sendDenied(orderId, id));
+                    "Hoàn thành", (dialog, which) -> sendAccept(orderId, id, position),
+                    "Từ chối", (dialog, which) -> sendDenied(orderId, id, position));
+        });
+
+        swiperefreshlayoutAC = findViewById(R.id.swiperefreshlayoutAC);
+        swiperefreshlayoutAC.setOnRefreshListener(() -> {
+            // Gửi dữ liệu lên server
+            GetBill(dataToSend);
         });
         networkChangeReceiver = new NetworkChangeReceiver();
     }
 
+    private void removeItem(int position) {
+        billList.remove(position);
+        billAdapter.notifyItemRemoved(position);
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -87,24 +96,25 @@ public class CashierActivity extends AppCompatActivity {
         unregisterReceiver(networkChangeReceiver);
     }
 
-    private void sendAccept(String orderId, String id) {
+    private void sendAccept(String orderId, String id, int position) {
         // Gửi dữ liệu lên server
         Map<String, String> data = new HashMap<>();
         data.put("order_id", orderId);
         data.put("order_status", "Hoàn thành");
         data.put("complete_time", getFormattedTime());
-        sendRequestAccept(data, id);
+        sendRequestAccept(data, id, orderId, position);
     }
-    private void sendDenied(String orderId, String id) {
+
+    private void sendDenied(String orderId, String id, int position) {
         // Gửi dữ liệu lên server
         Map<String, String> data = new HashMap<>();
         data.put("order_id", orderId);
         data.put("order_status", "Từ chối");
         data.put("complete_time", getFormattedTime());
-        sendRequestDenied(data, id);
+        sendRequestDenied(data, id, orderId, position);
     }
 
-    private void sendRequestAccept(Map<String, String> data, String id) {
+    private void sendRequestAccept(Map<String, String> data, String id, String orderId, int position) {
         String phpFilePathNoti = ConnectToServer.getUpdate_order_phpFilePath();
         String urlCA = ConnectToServer.getUpdate_order_url();
 
@@ -116,14 +126,15 @@ public class CashierActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String response) {
                 Log.d("responseCARA", response);
-                if (response.equals("success")){
+                if (response.equals("success")) {
                     Toast.makeText(CashierActivity.this, "Duyệt đơn thành công!",
                             Toast.LENGTH_SHORT).show();
-                    sendNotificationToTopic(id, "Thông báo tình trạng đơn hàng!", "Đơn hàng của bạn đã hoàn thành. Bạn có thể xuống cantin nhận đơn nhé! Cảm ơn bạn <3");
-                }else if (response.equals("fail")){
+                    sendNotificationToTopic(id, "Thông báo tình trạng đơn hàng!", "Đơn hàng "+orderId+" của bạn đã hoàn thành. Bạn có thể xuống cantin nhận đơn nhé! Cảm ơn bạn <3");
+                    removeItem(position);
+                } else if (response.equals("fail")) {
                     Toast.makeText(CashierActivity.this, "Duyệt đơn thất bại!",
                             Toast.LENGTH_SHORT).show();
-                }else if (response.equals("error")){
+                } else if (response.equals("error")) {
                     Toast.makeText(CashierActivity.this, "Lỗi yêu cầu duyệt đơn!",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -137,7 +148,8 @@ public class CashierActivity extends AppCompatActivity {
             }
         });
     }
-    private void sendRequestDenied(Map<String, String> data, String id) {
+
+    private void sendRequestDenied(Map<String, String> data, String id, String orderId, int position) {
         String phpFilePathNoti = ConnectToServer.getUpdate_order_phpFilePath();
         String urlCA = ConnectToServer.getUpdate_order_url();
 
@@ -149,14 +161,15 @@ public class CashierActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String response) {
                 Log.d("responseCARD", response);
-                if (response.equals("success")){
+                if (response.equals("success")) {
                     Toast.makeText(CashierActivity.this, "Từ chối thành công!",
                             Toast.LENGTH_SHORT).show();
-                    sendNotificationToTopic(id, "Thông báo tình trạng đơn hàng!", "Đơn hàng của bạn đã bị từ chối. Bạn hãy đặt lại đơn hàng mới nhé! Cảm ơn bạn <3");
-                }else if (response.equals("fail")){
+                    sendNotificationToTopic(id, "Thông báo tình trạng đơn hàng!", "Đơn hàng "+orderId+" của bạn đã bị từ chối. Bạn hãy đặt lại đơn hàng mới nhé! Cảm ơn bạn <3");
+                    removeItem(position);
+                } else if (response.equals("fail")) {
                     Toast.makeText(CashierActivity.this, "Từ chối thất bại!",
                             Toast.LENGTH_SHORT).show();
-                }else if (response.equals("error")){
+                } else if (response.equals("error")) {
                     Toast.makeText(CashierActivity.this, "Lỗi yêu cầu từ chối đơn!",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -170,6 +183,7 @@ public class CashierActivity extends AppCompatActivity {
             }
         });
     }
+
     public void GetBill(Map<String, String> data) {
         String phpFilePathNoti = ConnectToServer.getSelect_bill_phpFilePath();
         String urlCA = ConnectToServer.getSelect_bill_url();
@@ -200,6 +214,11 @@ public class CashierActivity extends AppCompatActivity {
 
                             String order_id = jsonObject.getString("order_id");
                             String acc_id = jsonObject.getString("acc_id");
+                            String content = jsonObject.getString("order_content");
+
+                            // Chuyển đổi nội dung đơn hàng thành SpannableString để hiển thị xuống dòng
+                            SpannableString order_content = new SpannableString(content.replace("\\n", "\n"));
+
                             String price = jsonObject.getString("total_payment_amount");
                             String receiver = jsonObject.getString("receiver_name");
                             String phone = jsonObject.getString("phonenumber");
@@ -207,7 +226,7 @@ public class CashierActivity extends AppCompatActivity {
                             String time = jsonObject.getString("pay_time");
 
                             // Xóa dữ liệu trước đó và thêm người mới
-                            billList.add(new Bill(order_id,acc_id, price, receiver, phone, paymentmethod, time));
+                            billList.add(new Bill(order_id, acc_id, order_content.toString(), price, receiver, phone, paymentmethod, time));
                         }
                         // Cập nhật RecyclerView
                         billAdapter.setBillList(billList);

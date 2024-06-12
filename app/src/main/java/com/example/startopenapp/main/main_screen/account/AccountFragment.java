@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.startopenapp.R;
 import com.example.startopenapp.account.changepass.ChangePassActivity;
 import com.example.startopenapp.account.login.LoginActivity;
+import com.example.startopenapp.main.home.order.historyorder.HistoryOrders;
 import com.example.startopenapp.main.main_screen.account.money.MoneyManagement;
 import com.example.startopenapp.main.account.VerifyAccountActivity;
 import com.example.startopenapp.retrofit.ConnectToServer;
@@ -36,7 +37,7 @@ import java.util.Map;
 public class AccountFragment extends Fragment {
     private Boolean verifyAcc;
     private String stdId;
-    private TextView tvVerifyAcc, tvLoginSecurity, tvHelp, tvLogout, tvChangePass, tvMoneyManage;
+    private TextView tvVerifyAcc, tvLoginSecurity, tvHelp, tvLogout, tvChangePass, tvMoneyManage, tvBuyHistory;
     private RetrofitManager retrofitManagerHome;
 
     public AccountFragment() {}
@@ -101,6 +102,12 @@ public class AccountFragment extends Fragment {
         tvMoneyManage = view.findViewById(R.id.tvMoneyManage);
         tvMoneyManage.setOnClickListener(view16 -> {
             Intent intent = new Intent(getActivity(), MoneyManagement.class);
+            intent.putExtra("acc_id", stdId);
+            startActivity(intent);
+        });
+        tvBuyHistory = view.findViewById(R.id.tvBuyHistory);
+        tvBuyHistory.setOnClickListener(view17 -> {
+            Intent intent = new Intent(getActivity(), HistoryOrders.class);
             intent.putExtra("acc_id", stdId);
             startActivity(intent);
         });

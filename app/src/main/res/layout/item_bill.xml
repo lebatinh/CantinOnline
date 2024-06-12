@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
     <androidx.cardview.widget.CardView
@@ -82,6 +82,18 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nội dung đơn : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_describe" />
+            <TextView
+                android:id="@+id/itemOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_time" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -155,7 +167,7 @@
                 android:maxLength="20"
                 android:gravity="end"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_describe" />
+                android:textSize="@dimen/text_time" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

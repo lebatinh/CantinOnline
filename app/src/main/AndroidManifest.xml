@@ -37,6 +37,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".main.home.order.historyorder.HistoryOrders"
+            android:exported="false" />
+        <activity
             android:name=".main.home.order.BuySingleProduct"
             android:exported="false" />
         <activity

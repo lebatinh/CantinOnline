@@ -102,11 +102,24 @@
                     android:weightSum="3">
 
                     <TextView
+                        android:id="@+id/tvVerifyAcc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/verify_account_fail"
+                        android:drawablePadding="10dp"
+                        android:text="Xác thực thông tin"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_normal" />
+
+                    <TextView
                         android:id="@+id/tvMoneyManage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:layout_marginTop="15dp"
                         android:drawableStart="@drawable/money_management"
                         android:drawablePadding="10dp"
                         android:text="Quản lý nguồn tiền"
@@ -127,17 +140,18 @@
                         app:drawableStartCompat="@drawable/manage_account" />
 
                     <TextView
-                        android:id="@+id/tvVerifyAcc"
+                        android:id="@+id/tvBuyHistory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="15dp"
                         android:layout_weight="1"
-                        android:drawableStart="@drawable/verify_account_fail"
                         android:drawablePadding="10dp"
-                        android:text="Xác thực thông tin"
+                        android:text="Lịch sử mua hàng"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_normal" />
+                        android:textSize="@dimen/text_normal"
+                        app:drawableStartCompat="@drawable/cart" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

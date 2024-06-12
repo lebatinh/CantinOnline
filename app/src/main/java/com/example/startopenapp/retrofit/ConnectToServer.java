@@ -1,7 +1,7 @@
 package com.example.startopenapp.retrofit;
 
 public class ConnectToServer {
-    static String localhost = "192.168.3.50";
+    static String localhost = "192.168.3.84";
     static String insert_account_phpFilePath = "insert_account.php";
     static String insert_account_url = "http://" + localhost + "/cantin/insert_account.php/";
     static String select_account_phpFilePath = "select_account.php";
@@ -66,6 +66,8 @@ public class ConnectToServer {
     static String delete_item_url = "http://" + localhost + "/cantin/delete_item.php/";
     static String update_cart_phpFilePath = "update_cart.php";
     static String update_cart_url = "http://" + localhost + "/cantin/update_cart.php/";
+    static String select_orders_history_phpFilePath = "select_orders_history.php";
+    static String select_orders_history_url = "http://" + localhost + "/cantin/select_orders_history.php/";
 
     public static String getInsert_account_phpFilePath() {
         return insert_account_phpFilePath;
@@ -322,5 +324,13 @@ public class ConnectToServer {
 
     public static String getUpdate_cart_url() {
         return update_cart_url;
+    }
+
+    public static String getSelect_orders_history_phpFilePath() {
+        return select_orders_history_phpFilePath;
+    }
+
+    public static String getSelect_orders_history_url() {
+        return select_orders_history_url;
     }
 }

@@ -40,6 +40,8 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
             return;
         }
         holder.itemOrderId.setText(bill.getOderId());
+        holder.itemAccId.setText(bill.getAccId());
+        holder.itemOrder.setText(bill.getContent());
         holder.itemPrice.setText(bill.getPrice());
         holder.itemReceiver.setText(bill.getReceiver());
         holder.itemPhone.setText(bill.getPhone());
@@ -56,12 +58,13 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
     }
 
     public class BillViewHolder extends RecyclerView.ViewHolder{
-        private TextView itemOrderId, itemPrice, itemAccId, itemReceiver, itemPhone, itemPaymentMethod, itemOrderTime;
+        private TextView itemOrderId, itemPrice, itemAccId,itemOrder, itemReceiver, itemPhone, itemPaymentMethod, itemOrderTime;
         public BillViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             itemOrderId = itemView.findViewById(R.id.itemOrderId);
             itemPrice = itemView.findViewById(R.id.itemPrice);
             itemAccId = itemView.findViewById(R.id.itemAccId);
+            itemOrder = itemView.findViewById(R.id.itemOrder);
             itemReceiver = itemView.findViewById(R.id.itemReceiver);
             itemPhone = itemView.findViewById(R.id.itemPhone);
             itemPaymentMethod = itemView.findViewById(R.id.itemPaymentMethod);
