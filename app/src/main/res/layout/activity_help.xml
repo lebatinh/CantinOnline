@@ -18,7 +18,8 @@
             android:layout_gravity="center|end"
             android:layout_marginStart="10dp"
             android:src="@drawable/help"
-            android:tooltipText="Điền đầy đủ thông tin rồi báo lỗi!"/>
+            android:tooltipText="@string/tooltiptext_h"
+            tools:targetApi="o" />
 
         <TextView
             android:layout_width="match_parent"
@@ -26,7 +27,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Trung tâm trợ giúp"
+            android:text="@string/center_help"
             android:textSize="@dimen/text_title_small" />
     </FrameLayout>
 
@@ -46,7 +47,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:padding="10dp"
-                android:text="Điền đầy đủ thông tin để báo lỗi"
+                android:text="@string/write_error"
                 android:textSize="@dimen/text_button"
                 android:textStyle="bold" />
 
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Lỗi gặp phải (tối đa 50 kí tự)"
+                android:hint="@string/error_hint"
                 app:shapeAppearanceOverlay="@style/corner_20">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -75,7 +76,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Mô tả lỗi (tối đa 100 kí tự)"
+                android:hint="@string/error_descrip_hint"
                 app:shapeAppearanceOverlay="@style/corner_20">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -95,7 +96,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Thời gian lỗi xảy ra"
+                android:hint="@string/error_time_hint"
                 app:shapeAppearanceOverlay="@style/corner_20">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -111,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Ảnh lỗi (tối đa 2 ảnh):"
+                android:text="@string/error_image"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_normal"
                 android:textStyle="bold" />
@@ -188,7 +189,7 @@
             android:id="@+id/btnGuiError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gửi"
+            android:text="@string/send"
             android:backgroundTint="#AD17E3"
             android:textSize="@dimen/text_button"
             app:shapeAppearanceOverlay="@style/corner_50" />

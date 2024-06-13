@@ -19,14 +19,15 @@
             android:layout_gravity="center|end"
             android:layout_marginStart="10dp"
             android:src="@drawable/help"
-            android:tooltipText="Điền đầy đủ thông tin để đặt hàng"/>
+            android:tooltipText="@string/tooltiptext_bp"
+            tools:targetApi="o" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Xác nhận đơn hàng"
+            android:text="@string/confirm_orders"
             android:textColor="@color/black"
             android:textSize="@dimen/text_title_small" />
     </FrameLayout>
@@ -44,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Thông tin người nhận"
+                android:text="@string/infor_receiver"
                 android:textSize="@dimen/text_button"
                 android:textStyle="bold" />
 
@@ -57,7 +58,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID nguời đặt: "
+                    android:text="@string/id_orderer"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
 
@@ -65,7 +66,7 @@
                     android:id="@+id/tvAccId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Mã sinh viên/cán bộ"
+                    android:hint="@string/id_orderer_hint"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
 
@@ -78,7 +79,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tên người nhận: "
+                    android:text="@string/receiver_name"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
 
@@ -86,7 +87,7 @@
                     android:id="@+id/edtName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Tên người nhận"
+                    android:hint="@string/receiver_name_hint"
                     android:maxLength="20"
                     android:maxLines="1"
                     android:textSize="@dimen/text_describe" />
@@ -100,7 +101,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số điện thoại: "
+                    android:text="@string/phonenumber1"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
 
@@ -108,7 +109,7 @@
                     android:id="@+id/edtPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Số điện thoại"
+                    android:hint="@string/phonenumber"
                     android:maxLength="10"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
@@ -121,7 +122,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Thời gian nhận(trong ngày): "
+                    android:text="@string/time_receiver"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
 
@@ -129,7 +130,7 @@
                     android:id="@+id/tvTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Ấn chọn thời gian nhận"
+                    android:hint="@string/time_receiver_hint"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
 
@@ -142,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Thông tin đơn hàng"
+                android:text="@string/infor_orders"
                 android:textSize="@dimen/text_button"
                 android:textStyle="bold" />
 
@@ -161,7 +162,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Giá tổng : "
+                    android:text="@string/total_price"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
 
@@ -186,7 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ghi chú : "
+                    android:text="@string/note"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
 
@@ -194,7 +195,7 @@
                     android:id="@+id/edtNote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="ghi chú (tối đa 50 kí tự)"
+                    android:hint="@string/note_hint"
                     android:maxLength="50"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
@@ -233,7 +234,7 @@
                             android:layout_height="wrap_content"
                             android:padding="10dp"
                             android:background="@drawable/check_select"
-                            android:text="Tiền tài khoản"
+                            android:text="@string/account_money"
                             android:textSize="@dimen/text_describe" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
@@ -253,7 +254,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
-                            android:text="Tiền mặt"
+                            android:text="@string/cash"
                             android:textSize="@dimen/text_describe" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
@@ -264,7 +265,7 @@
 
     <Button
         android:id="@+id/btnOrder"
-        android:text="Đặt đơn"
+        android:text="@string/order"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         app:backgroundTint="@android:color/holo_red_light"

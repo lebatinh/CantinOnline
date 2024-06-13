@@ -31,7 +31,8 @@
                     android:layout_gravity="center|end"
                     android:layout_marginStart="10dp"
                     android:src="@drawable/help"
-                    android:tooltipText="Thông tin đơn nạp tiền tài khoản"/>
+                    android:tooltipText="@string/tooltiptext_ir"
+                    tools:targetApi="o" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Thông tin đơn nạp"
+                    android:text="@string/infor_recharge"
                     android:textSize="@dimen/text_title_small" />
             </FrameLayout>
             <TextView
@@ -48,7 +49,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:padding="10dp"
-                android:text="Đơn hàng:"
+                android:text="@string/orders"
                 android:textSize="@dimen/text_button"
                 android:textStyle="bold" />
 
@@ -62,7 +63,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mã đơn: "
+                    android:text="@string/orders_id"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -72,7 +73,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:hint="số tiền nạp"
                     android:inputType="number"
                     android:text="@={moneyViewModel2.transaction_id}"
                     android:textColor="@color/black"
@@ -90,7 +90,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số tiền nạp (VND): "
+                    android:text="@string/money_recharge"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -100,7 +100,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:hint="số tiền nạp"
                     android:inputType="number"
                     android:text="@={moneyViewModel2.sotiennap}"
                     android:textColor="@color/black"
@@ -118,7 +117,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Trạng thái: "
+                    android:text="@string/status"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -128,7 +127,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:hint="trạng thái"
                     android:inputType="number"
                     android:text="@={moneyViewModel2.status}"
                     android:textColor="@color/black"
@@ -146,7 +144,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Thời gian tạo: "
+                    android:text="@string/time_recharge"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -156,7 +154,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:hint="thời gian tạo"
                     android:inputType="number"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
@@ -169,7 +166,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:padding="10dp"
-                android:text="Thông tin thanh toán:"
+                android:text="@string/infor_bill_recharge"
                 android:textSize="@dimen/text_button"
                 android:textStyle="bold" />
 
@@ -183,7 +180,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ngân hàng: "
+                    android:text="@string/bank"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -193,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Ngân hàng Quân đội MB"
+                    android:text="MB Bank"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
@@ -208,7 +205,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số tài khoản: "
+                    android:text="@string/account_number"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -222,8 +219,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:clickable="true"
-                    android:focusable="true"
-                    app:drawableEndCompat="@drawable/copy" />
+                    android:focusable="true" />
             </LinearLayout>
 
             <LinearLayout
@@ -236,7 +232,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chủ tài khoản: "
+                    android:text="@string/account_owner"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -260,7 +256,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số tiền nạp (VND): "
+                    android:text="@string/money_recharge"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -270,14 +266,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:hint="số tiền nạp"
                     android:inputType="number"
                     android:text="@={moneyViewModel2.sotiennap}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:clickable="true"
                     android:focusable="true"
-                    app:drawableEndCompat="@drawable/copy"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -291,7 +285,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nội dung thanh toán: "
+                    android:text="@string/content_bill"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -301,20 +295,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:hint="Nap tien tk"
                     android:text="@={moneyViewModel2.noidungnap}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:clickable="true"
-                    android:focusable="true"
-                    app:drawableEndCompat="@drawable/copy" />
+                    android:focusable="true" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Mã QR:"
+                android:text="@string/qr_code"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_normal" />
 

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Danh sách vật phẩm"
+            android:text="@string/list_item"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="@dimen/text_title_small" />
@@ -26,7 +26,8 @@
             android:layout_gravity="center|end"
             android:layout_marginStart="10dp"
             android:src="@drawable/help"
-            android:tooltipText="Ấn vào vật phẩm để sửa hoặc xóa"/>
+            android:tooltipText="@string/tooltiptext_f"
+            tools:targetApi="o" />
 
     </FrameLayout>
 

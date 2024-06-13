@@ -81,7 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="Mật khẩu cũ"
+                        android:hint="@string/old_pass"
                         app:passwordToggleEnabled="true"
                         app:passwordToggleTint="@color/black"
                         app:shapeAppearanceOverlay="@style/corner_20"
@@ -106,7 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="Mã sinh viên"
+                        android:hint="@string/id_orderer_hint"
                         app:shapeAppearanceOverlay="@style/corner_20"
                         tools:ignore="HardcodedText">
 

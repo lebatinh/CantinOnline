@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:hint="Mã sinh viên"
+                    android:hint="@string/student_number"
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="@color/black"
                     app:shapeAppearanceOverlay="@style/corner_20">

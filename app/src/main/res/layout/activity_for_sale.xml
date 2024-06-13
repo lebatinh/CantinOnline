@@ -16,7 +16,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Đăng bán vật phẩm"
+            android:text="@string/sell_item"
             android:textSize="@dimen/text_title_small" />
 
         <ImageView
@@ -54,7 +54,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ảnh đồ cần bán:"
+                        android:text="@string/image_item"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -86,7 +86,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Loại vật phẩm :"
+                        android:text="@string/type_item"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -96,7 +96,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
-                        android:hint="Chọn loại vật phẩm"
+                        android:hint="@string/type_item_hint"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
                 </LinearLayout>
@@ -111,7 +111,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tên vật phẩm :"
+                        android:text="@string/name_item"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -121,7 +121,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
-                        android:hint="Tên vật phẩm (max 45 kí tự)"
+                        android:hint="@string/name_item_hint"
+                        android:maxLength="45"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
                 </LinearLayout>
@@ -136,7 +137,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Giới thiệu :"
+                        android:text="@string/introduce_item"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -146,7 +147,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
-                        android:hint="Giới thiệu vật phẩm (max 200 kí tự)"
+                        android:hint="@string/introduce_item_hint"
+                        android:maxLength="200"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
                 </LinearLayout>
@@ -161,22 +163,28 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Giá :"
+                        android:text="@string/price_item"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/edtPriceVP"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Giá vật phẩm (đồng)"
+                        android:hint="@string/price_item_hint"
                         android:maxLength="100"
                         android:paddingStart="10dp"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="vnđ"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_describe"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>

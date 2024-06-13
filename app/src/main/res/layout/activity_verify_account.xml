@@ -23,7 +23,8 @@
                 android:layout_gravity="center|end"
                 android:layout_marginStart="10dp"
                 android:src="@drawable/help"
-                android:tooltipText="Kiểm tra thông tin người dùng ở dưới"/>
+                android:tooltipText="@string/tooltiptext_va"
+                tools:targetApi="o" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -31,7 +32,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="Kiểm tra tài khoản"
+                android:text="@string/check_account"
                 android:textSize="@dimen/text_title_small" />
         </FrameLayout>
 
@@ -65,7 +66,7 @@
                         android:drawableStart="@drawable/security_acc"
                         android:drawableEnd="@drawable/more"
                         android:drawablePadding="10dp"
-                        android:text="Thông tin người dùng"
+                        android:text="@string/user_info"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_normal" />
 
@@ -99,7 +100,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="15dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Xác thực ngay" />
+                            android:text="@string/verify_now" />
                     </LinearLayout>
 
                     <LinearLayout

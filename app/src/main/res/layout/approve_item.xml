@@ -27,7 +27,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID nguời yêu cầu: "
+                    android:text="@string/requestor_id"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
@@ -48,7 +48,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mã đơn: "
+                    android:text="@string/orders_id"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Số tiền: "
+                    android:text="@string/money"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
@@ -91,7 +91,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tài khoản nhận: "
+                    android:text="@string/receiver_bank"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
@@ -112,7 +112,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Thời gian tạo: "
+                    android:text="@string/time_recharge"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />

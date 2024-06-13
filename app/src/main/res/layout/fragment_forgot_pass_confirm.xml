@@ -59,7 +59,7 @@ tools:context=".account.forgotpass.ForgotPassFragmentConfirm">
                 android:visibility="visible">
 
                 <TextView
-                    android:text="Nhập mật khẩu mới!"
+                    android:text="@string/renewpass"
                     android:textSize="@dimen/text_button"
                     android:textStyle="italic|bold"
                     android:layout_width="match_parent"

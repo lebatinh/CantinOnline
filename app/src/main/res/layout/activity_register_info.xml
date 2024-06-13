@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Đăng ký thông tin"
+            android:text="@string/register_info"
             android:textSize="@dimen/text_title_small" />
 
         <ImageView
@@ -28,7 +28,7 @@
             android:layout_gravity="end|center"
             android:layout_marginEnd="10dp"
             android:src="@drawable/help"
-            android:tooltipText="Nhập đầy đủ dữ liệu vào các trường ngày sinh, địa chỉ, quê quán"
+            android:tooltipText="@string/tooltiptext_ri"
             tools:targetApi="o" />
     </FrameLayout>
 
@@ -51,7 +51,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ảnh đại diện :"
+                    android:text="@string/avatar"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
@@ -94,7 +94,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Id của bạn"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
                 </LinearLayout>
@@ -111,7 +110,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="Số điện thoại :"
+                        android:text="@string/phonenumber1"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -121,7 +120,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Số điện thoại"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
                 </LinearLayout>
@@ -138,7 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="Họ và tên :"
+                        android:text="@string/full_name"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -148,7 +146,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Họ và tên của bạn"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
                 </LinearLayout>
@@ -165,7 +162,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="Ngày sinh :"
+                        android:text="@string/birthday"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -175,7 +172,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Ngày sinh của bạn"
                         android:inputType="date"
                         android:maxLength="10"
                         android:textColor="@color/black"
@@ -195,7 +191,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="Địa chỉ :"
+                        android:text="@string/address"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -206,11 +202,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Địa chỉ nơi ở hiện tại của bạn"
                         android:maxLength="100"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
-
 
                 </LinearLayout>
 
@@ -226,7 +220,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="Quê quán :"
+                        android:text="@string/hometown"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe"
                         android:textStyle="bold" />
@@ -236,7 +230,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Quê quán của bạn"
                         android:maxLength="100"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
@@ -248,7 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Ảnh thẻ sinh viên :"
+                    android:text="@string/student_id_image"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe"
                     android:textStyle="bold" />
@@ -281,5 +274,6 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:text="Xác nhận" />
+        android:backgroundTint="#9A2DDF"
+        android:text="@string/confirm" />
 </LinearLayout>

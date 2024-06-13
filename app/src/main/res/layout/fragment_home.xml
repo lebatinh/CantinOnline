@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="40dp"
-                    android:text="Danh mục"
+                    android:text="@string/directory"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_title_small"
                     android:textStyle="bold" />
@@ -127,7 +127,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Cơm/Cơm\ntấm" />
+                                    android:text="@string/rice" />
 
                             </LinearLayout>
 
@@ -149,7 +149,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Bún, Phở\nMì" />
+                                    android:text="@string/pho_noodle" />
 
                             </LinearLayout>
 
@@ -169,7 +169,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Trái cây" />
+                                    android:text="@string/fruit" />
 
                             </LinearLayout>
 
@@ -189,7 +189,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Đồ uống" />
+                                    android:text="@string/drinks" />
 
                             </LinearLayout>
                         </TableRow>
@@ -221,7 +221,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Món tráng\nmiệng" />
+                                    android:text="@string/dessert" />
 
                             </LinearLayout>
 
@@ -241,7 +241,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Đồ ăn vặt" />
+                                    android:text="@string/snack" />
 
                             </LinearLayout>
 
@@ -262,7 +262,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Vật phẩm khác" />
+                                    android:text="@string/other_item" />
 
                             </LinearLayout>
 
@@ -282,7 +282,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Tất cả" />
+                                    android:text="@string/all" />
 
                             </LinearLayout>
 
@@ -302,7 +302,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="40dp"
-                        android:text="Dành cho người bán"
+                        android:text="@string/for_saler"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_title_small"
                         android:textStyle="bold" />
@@ -335,7 +335,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Đăng bán" />
+                                    android:text="@string/register_sell" />
 
                             </LinearLayout>
 
@@ -356,7 +356,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Duyệt đơn mua" />
+                                    android:text="@string/approve_purchase_order" />
 
                             </LinearLayout>
 
@@ -377,7 +377,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Danh sách món" />
+                                    android:text="@string/dish_list" />
 
                             </LinearLayout>
 

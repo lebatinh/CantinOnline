@@ -3,30 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/itemRice"
-        android:title="Cơm"
+        android:title="@string/rice"
         app:showAsAction="withText" />
     <item
         android:id="@+id/itemVegetarian"
-        android:title="Trái cây"
+        android:title="@string/fruit"
         app:showAsAction="withText" />
     <item
         android:id="@+id/itemPho"
-        android:title="Bún, Phở, Mì"
+        android:title="@string/pho_noodle"
         app:showAsAction="withText" />
     <item
         android:id="@+id/itemDrink"
-        android:title="Đồ uống"
+        android:title="@string/drinks"
         app:showAsAction="withText" />
     <item
         android:id="@+id/itemDesserts"
-        android:title="Món tráng miệng"
+        android:title="@string/dessert"
         app:showAsAction="withText" />
     <item
         android:id="@+id/itemSnack"
-        android:title="Đồ ăn vặt"
+        android:title="@string/snack"
         app:showAsAction="withText" />
     <item
         android:id="@+id/itemSale"
-        android:title="Vật phẩm khác"
+        android:title="@string/other_item"
         app:showAsAction="withText" />
 </menu>

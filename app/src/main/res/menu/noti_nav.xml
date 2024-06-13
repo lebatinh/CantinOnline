@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/item_important"
-        android:title="Quan trọng" />
+        android:title="@string/important" />
     <item
         android:id="@+id/item_endow"
-        android:title="Ưu đãi" />
+        android:title="@string/incentives" />
     <item
         android:id="@+id/item_interact"
-        android:title="Tương tác" />
+        android:title="@string/interact" />
 </menu>

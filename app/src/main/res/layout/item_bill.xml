@@ -25,7 +25,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID đơn hàng: "
+                    android:text="@string/orders_id"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
                 <TextView
@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Giá: "
+                    android:text="@string/total_price"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
                 <TextView
@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID người đặt: "
+                    android:text="@string/id_orderer"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
                 <TextView
@@ -85,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nội dung đơn : "
+                android:text="@string/orders_content"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_describe" />
             <TextView
@@ -103,7 +103,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tên: "
+                    android:text="@string/full_name"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
                 <TextView
@@ -126,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SĐT: "
+                    android:text="@string/phonenumber1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
                 <TextView
@@ -147,7 +147,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phương thức thanh toán: "
+                    android:text="@string/payment_method"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
                 <TextView

@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Giỏ hàng"
+            android:text="@string/cart"
             android:textColor="@color/black"
             android:textSize="@dimen/text_title_small" />
 
@@ -29,7 +29,7 @@
             android:layout_gravity="end"
             android:gravity="center"
             android:layout_marginEnd="10dp"
-            android:text="Xóa tất cả"
+            android:text="@string/delete_cart_all"
             android:textColor="@color/black"
             android:textSize="@dimen/text_describe" />
     </FrameLayout>
@@ -46,7 +46,7 @@
             android:orientation="horizontal"
             android:layout_margin="10dp">
             <TextView
-                android:text="Số loại vật phẩm trong giỏ: "
+                android:text="@string/number_of_type_in_cart"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_describe"
@@ -113,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Tất cả" />
+                android:text="@string/all" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,7 +126,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tổng giá trị trong giỏ:"
+                    android:text="@string/value_cart"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
@@ -146,7 +146,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_light"
                 android:gravity="center"
-                android:hint="Đặt hàng"
+                android:text="@string/order"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_describe" />
         </LinearLayout>

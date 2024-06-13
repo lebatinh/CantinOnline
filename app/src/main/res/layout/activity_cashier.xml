@@ -23,14 +23,15 @@
                 android:layout_gravity="center|end"
                 android:layout_marginStart="10dp"
                 android:src="@drawable/help"
-                android:tooltipText="Ấn vào từng đơn hàng để duyệt hoặc hủy"/>
+                android:tooltipText="@string/tooltiptext_c"
+                tools:targetApi="o" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Duyệt đơn đặt hàng"
+                android:text="@string/browse_orders"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_title_small" />
         </FrameLayout>

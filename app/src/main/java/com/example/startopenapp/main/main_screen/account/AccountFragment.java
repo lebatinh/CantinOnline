@@ -2,7 +2,12 @@ package com.example.startopenapp.main.main_screen.account;
 
 import static com.example.startopenapp.display_manager.ImageHelper.decodeBase64ToBitmap;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -14,7 +19,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,12 +40,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+
+import io.opencensus.resource.Resource;
 
 public class AccountFragment extends Fragment {
     private Boolean verifyAcc;
     private String stdId;
     private TextView tvVerifyAcc, tvLoginSecurity, tvHelp, tvLogout, tvChangePass, tvMoneyManage, tvBuyHistory;
+    private Spinner spLang;
+    private static final String[] languages = {"Tiếng việt","English"};
     private RetrofitManager retrofitManagerHome;
 
     public AccountFragment() {}
@@ -111,8 +124,45 @@ public class AccountFragment extends Fragment {
             intent.putExtra("acc_id", stdId);
             startActivity(intent);
         });
+
+        spLang = view.findViewById(R.id.spLang);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, languages);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spLang.setAdapter(adapter);
+        // Đọc ngôn ngữ đã lưu và đặt giá trị cho Spinner
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        String savedLang = sharedPreferences.getString("My_Lang", "vi"); // Mặc định là tiếng Việt
+        if (savedLang.equals("vi")) {
+            spLang.setSelection(0);
+        } else if (savedLang.equals("en")) {
+            spLang.setSelection(1);
+        }
+        spLang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedLang = adapterView.getItemAtPosition(i).toString();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                String currentLang = sharedPreferences.getString("My_Lang", "vi");
+
+                if (selectedLang.equals("Tiếng việt") && !currentLang.equals("vi")){
+                    editor.putString("My_Lang", "vi");
+                    Toast.makeText(requireContext(), "Hãy khởi động lại ứng dụng để thay đổi ngôn ngữ!", Toast.LENGTH_SHORT).show();
+                } else if (selectedLang.equals("English") && !currentLang.equals("en")) {
+                    editor.putString("My_Lang", "en");
+                    Toast.makeText(requireContext(), "Hãy khởi động lại ứng dụng để thay đổi ngôn ngữ!", Toast.LENGTH_SHORT).show();
+                }
+                editor.apply();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         return view;
     }
+
 
     //kiểm tra tài khoản
     private void checkVerifyAcc(Map<String, String> data) {

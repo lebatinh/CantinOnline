@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Lịch sử mua hàng"
+            android:text="@string/orders_history"
             android:textSize="@dimen/text_title_small" />
 
         <ImageView
@@ -32,7 +32,8 @@
             android:layout_gravity="center|end"
             android:layout_marginStart="10dp"
             android:src="@drawable/help"
-            android:tooltipText="Kéo xuống để load lại trang sau khi duyệt đơn"/>
+            android:tooltipText="@string/tooltiptext_ho"
+            tools:targetApi="o" />
     </FrameLayout>
 
     <com.google.android.material.tabs.TabLayout

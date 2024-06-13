@@ -27,7 +27,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="Quản lý tài chính"
+                android:text="@string/finance_management"
                 android:textSize="@dimen/text_title_small" />
 
             <ImageView
@@ -55,7 +55,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
                     android:padding="10dp"
-                    android:text="Tài khoản:"
+                    android:text="@string/account1"
                     android:textSize="@dimen/text_button"
                     android:textStyle="bold" />
 
@@ -69,7 +69,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mã sinh viên: "
+                        android:text="@string/student_number1"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
 
@@ -78,7 +78,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:hint="id"
                         android:text="@={moneyViewModel.stdId}"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
@@ -94,7 +93,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Họ và tên: "
+                        android:text="@string/full_name"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
 
@@ -103,7 +102,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:hint="name"
                         android:text="@={moneyViewModel.name}"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
@@ -119,7 +117,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Số dư tài khoản: "
+                        android:text="@string/acc_balance"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
 
@@ -128,7 +126,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:hint="money"
                         android:text="@={moneyViewModel.sodu}"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_describe" />
@@ -161,7 +158,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="15dp"
-                                android:text="Nạp tiền"
+                                android:text="@string/recharge"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/text_normal" />
                         </androidx.cardview.widget.CardView>
@@ -185,7 +182,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="15dp"
-                                android:text="Rút tiền"
+                                android:text="@string/withdraw"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/text_normal" />
                         </androidx.cardview.widget.CardView>
@@ -205,7 +202,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:padding="10dp"
-                        android:text="Tạo yêu cầu nạp tiền:"
+                        android:text="@string/recharge_request"
                         android:textSize="@dimen/text_button"
                         android:textStyle="bold" />
 
@@ -220,7 +217,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Số tiền nạp (VND): "
+                            android:text="@string/money_recharge"
                             android:textColor="@color/black"
                             android:textSize="@dimen/text_describe" />
 
@@ -242,7 +239,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
-                        android:text="Tạo yêu cầu nạp tiền" />
+                        android:text="@string/recharge_money1" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -258,7 +255,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
                         android:padding="10dp"
-                        android:text="Tạo yêu cầu rút tiền:"
+                        android:text="@string/withdraw_money"
                         android:textSize="@dimen/text_button"
                         android:textStyle="bold" />
 
@@ -273,7 +270,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Số tiền rút (VND): "
+                            android:text="@string/money_withdraw"
                             android:textColor="@color/black"
                             android:textSize="@dimen/text_describe" />
 
@@ -300,7 +297,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ngân hàng: "
+                            android:text="@string/bank"
                             android:textColor="@color/black"
                             android:textSize="@dimen/text_describe" />
 
@@ -326,7 +323,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Số tài khoản nhận: "
+                            android:text="@string/receiver_bank"
                             android:textColor="@color/black"
                             android:textSize="@dimen/text_describe" />
 
@@ -352,7 +349,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tên chủ tài khoản nhận: "
+                            android:text="@string/receiver_name_bank"
                             android:textColor="@color/black"
                             android:textSize="@dimen/text_describe" />
 
@@ -373,7 +370,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
-                        android:text="Tạo yêu cầu rút tiền" />
+                        android:text="@string/money_withdraw1" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

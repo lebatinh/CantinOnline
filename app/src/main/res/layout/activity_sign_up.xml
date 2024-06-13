@@ -77,7 +77,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="Mã Sinh viên"
+                        android:hint="@string/student_number"
                         app:shapeAppearanceOverlay="@style/corner_20"
                         tools:ignore="HardcodedText">
 
@@ -101,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="Họ và tên"
+                        android:hint="@string/full_name"
                         app:shapeAppearanceOverlay="@style/corner_20"
                         tools:ignore="HardcodedText">
 

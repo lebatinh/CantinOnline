@@ -1,10 +1,13 @@
 package com.example.startopenapp.display_manager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +24,8 @@ import com.example.startopenapp.R;
 import com.example.startopenapp.account.login.LoginActivity;
 import com.example.startopenapp.introduce.IntroduceActivity;
 
+import java.util.Locale;
+
 public class CheckPermisson extends AppCompatActivity {
 
     private static final int REQUEST_CODE_INTERNET_PERMISSION = 1001;
@@ -35,7 +40,25 @@ public class CheckPermisson extends AppCompatActivity {
         setContentView(R.layout.activity_check_permisson);
         checkInstallation();
         checkPermission();
+        loadLocale();
         networkChangeReceiver = new NetworkChangeReceiver();
+    }
+
+    private void loadLocale() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = sharedPreferences.getString("My_Lang", ""); // Mặc định là rỗng nếu chưa có giá trị
+        setLocal(this, language);
+    }
+
+    private void setLocal(Activity activity, String langCode) {
+        if (langCode.isEmpty()) return; // Không làm gì nếu langCode rỗng
+
+        Locale locale = new Locale(langCode);
+        Locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration configuration = new Configuration(resources.getConfiguration());
+        configuration.setLocale(locale);
+        activity.getBaseContext().getResources().updateConfiguration(configuration, activity.getBaseContext().getResources().getDisplayMetrics());
     }
 
     @Override

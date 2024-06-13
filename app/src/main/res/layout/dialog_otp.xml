@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:hint="Nhập mã OTP"
+        android:hint="@string/enter_otp_code"
         app:shapeAppearanceOverlay="@style/corner_20">
 
         <com.google.android.material.textfield.TextInputEditText
