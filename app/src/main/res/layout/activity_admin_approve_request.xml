@@ -11,9 +11,10 @@
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayoutAR"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/swipeRefreshLayoutAR">
+        android:background="@drawable/background_color1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,13 +40,14 @@
                     android:layout_gravity="center|end"
                     android:layout_marginStart="10dp"
                     android:src="@drawable/help"
-                    android:tooltipText="Kéo xuống để load lại trang sau khi duyệt đơn"/>
+                    android:tooltipText="Kéo xuống để load lại trang sau khi duyệt đơn" />
             </FrameLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayoutAppove"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@null" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPagerApprove"

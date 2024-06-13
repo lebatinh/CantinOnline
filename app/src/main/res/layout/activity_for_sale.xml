@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_color1"
     tools:context=".admin.sell.ForSale">
     <FrameLayout
         android:layout_width="match_parent"
@@ -191,5 +192,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:backgroundTint="#C586EC"
         android:text="Đăng bán" />
 </LinearLayout>

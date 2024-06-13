@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="11"
+    android:background="@drawable/background_color4"
     tools:context=".main.main_screen.notification.NotificationFragment">
 
     <FrameLayout
@@ -34,6 +35,7 @@
         android:id="@+id/tablayoutNoti"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:background="@null"
         android:layout_weight="5"/>
 
     <androidx.viewpager2.widget.ViewPager2

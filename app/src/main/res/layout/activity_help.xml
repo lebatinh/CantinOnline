@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_color1"
     tools:context=".main.main_screen.account.HelpActivity">
 
     <FrameLayout
@@ -180,7 +181,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
-        android:background="#8511C2C8"
         android:gravity="center"
         android:padding="10dp">
 
@@ -189,6 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gửi"
+            android:backgroundTint="#AD17E3"
             android:textSize="@dimen/text_button"
             app:shapeAppearanceOverlay="@style/corner_50" />
 

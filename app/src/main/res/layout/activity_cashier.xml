@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/swiperefreshlayoutAC"
+    android:background="@drawable/background_color1"
     tools:context=".admin.cashier.CashierActivity">
 
     <LinearLayout
