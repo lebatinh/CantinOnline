@@ -166,4 +166,5 @@
     <string name="important">Important</string>
     <string name="incentives">Incentives</string>
     <string name="interact">Interact</string>
+    <string name="select_time">Click here to select a time</string>
 </resources>

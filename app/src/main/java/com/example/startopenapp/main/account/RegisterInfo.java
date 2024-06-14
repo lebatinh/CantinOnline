@@ -6,6 +6,7 @@ import static com.example.startopenapp.display_manager.ImageHelper.openGallery;
 import static com.example.startopenapp.display_manager.ImageHelper.requestCameraPermission;
 import static com.example.startopenapp.display_manager.ImageHelper.requestGalleryPermission;
 import static com.example.startopenapp.display_manager.TimeHelper.getFormattedTime;
+import static com.example.startopenapp.display_manager.TimeHelper.showDatePickerDialog;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -40,8 +41,8 @@ import java.util.Map;
 public class RegisterInfo extends AppCompatActivity {
     private RetrofitManager retrofitManagerRI;
     private ImageView imgAvtRI, imgStdIDCardRI;
-    private TextView tvIDRI, tvPhoneRI, tvNameRI;
-    private EditText tvBirthdayRI, tvAddressRI, tvHometownRI;
+    private TextView tvIDRI, tvPhoneRI, tvNameRI, tvBirthdayRI;
+    private EditText tvAddressRI, tvHometownRI;
     private Button btnConfirmRI;
     private String accId;
     private NetworkChangeReceiver networkChangeReceiver;
@@ -62,6 +63,7 @@ public class RegisterInfo extends AppCompatActivity {
 
         imgAvtRI.setOnClickListener(view -> showImageSelectorDialog(RegisterInfo.this, imgAvtRI));
         imgStdIDCardRI.setOnClickListener(view -> showImageSelectorDialog(RegisterInfo.this, imgStdIDCardRI));
+        tvBirthdayRI.setOnClickListener(view -> showDatePickerDialog(RegisterInfo.this, tvBirthdayRI));
         networkChangeReceiver = new NetworkChangeReceiver();
     }
 

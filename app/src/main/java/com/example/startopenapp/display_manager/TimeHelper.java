@@ -1,10 +1,10 @@
 package com.example.startopenapp.display_manager;
 
+import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -81,10 +81,59 @@ public class TimeHelper {
         int currentMinute = currentTime.get(Calendar.MINUTE);
 
         // Kiểm tra nếu thời gian hiện tại từ 7 giờ sáng đến 21 giờ 29 phút
-        if ((currentHour >= 7 && currentHour < 21) || (currentHour == 21 && currentMinute <= 30)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (currentHour >= 7 && currentHour < 21) || (currentHour == 21 && currentMinute <= 30);
+    }
+
+    public static void showTimeAndDatePickerDialog(Context context, final TextView dateTimeTextView) {
+        Calendar calendar = Calendar.getInstance();
+
+        // Lấy giờ và phút hiện tại
+        int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+        int currentMinute = calendar.get(Calendar.MINUTE);
+
+        // Hiển thị TimePickerDialog trước
+        TimePickerDialog timePickerDialog = new TimePickerDialog(context,
+                (view, selectedHour, selectedMinute) -> {
+                    // Sau khi chọn giờ và phút, hiển thị DatePickerDialog
+                    showTimePickerDialog(context, dateTimeTextView, selectedHour, selectedMinute);
+                }, currentHour, currentMinute, true);
+        timePickerDialog.show();
+    }
+
+    private static void showTimePickerDialog(Context context, final TextView dateTimeTextView,
+                                             int selectedHour, int selectedMinute) {
+        Calendar calendar = Calendar.getInstance();
+
+        // Lấy ngày, tháng và năm hiện tại
+        int currentYear = calendar.get(Calendar.YEAR);
+        int currentMonth = calendar.get(Calendar.MONTH);
+        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(context,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    selectedMonth += 1;
+                    String dateTime = String.format("%02d:%02d %02d/%02d/%d", selectedHour,
+                            selectedMinute, selectedDay, selectedMonth, selectedYear);
+                    dateTimeTextView.setText(dateTime);
+                }, currentYear, currentMonth, currentDay);
+        datePickerDialog.show();
+    }
+
+    public static void showDatePickerDialog(Context context, final TextView dateTimeTextView) {
+        Calendar calendar = Calendar.getInstance();
+
+        // Lấy ngày, tháng và năm hiện tại
+        int currentYear = calendar.get(Calendar.YEAR);
+        int currentMonth = calendar.get(Calendar.MONTH);
+        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(context,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    selectedMonth += 1;
+                    String dateTime = String.format("%02d/%02d/%d",
+                            selectedDay, selectedMonth, selectedYear);
+                    dateTimeTextView.setText(dateTime);
+                }, currentYear, currentMonth, currentDay);
+        datePickerDialog.show();
     }
 }

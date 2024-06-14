@@ -5,10 +5,7 @@ import static com.example.startopenapp.display_manager.ImageHelper.openCamera;
 import static com.example.startopenapp.display_manager.ImageHelper.openGallery;
 import static com.example.startopenapp.display_manager.ImageHelper.requestCameraPermission;
 import static com.example.startopenapp.display_manager.ImageHelper.requestGalleryPermission;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.startopenapp.display_manager.TimeHelper.showTimeAndDatePickerDialog;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +16,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.startopenapp.R;
 import com.example.startopenapp.display_manager.ImageHelper;
@@ -30,11 +32,13 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class HelpActivity extends AppCompatActivity {
     RetrofitManager retrofitManagerHelp;
     String accId;
-    TextInputEditText edtError, edtDescribe, edtTime;
+    TextInputEditText edtError, edtDescribe;
+    TextView tvTime;
     ImageView imgError1, imgError2;
     Button btnGuiError;
     private NetworkChangeReceiver networkChangeReceiver;
@@ -57,12 +61,14 @@ public class HelpActivity extends AppCompatActivity {
             showImageSelectorDialog(HelpActivity.this, imgError2);
             imgError2.setBackground(null);
         });
+        tvTime.setOnClickListener(view -> showTimeAndDatePickerDialog(HelpActivity.this, tvTime));
+
         btnGuiError.setOnClickListener(view2 -> {
             // Gửi dữ liệu lên server
 
-            String error = edtError.getText().toString().trim();
-            String describeError = edtDescribe.getText().toString().trim();
-            String timeError = edtTime.getText().toString().trim();
+            String error = Objects.requireNonNull(edtError.getText()).toString().trim();
+            String describeError = Objects.requireNonNull(edtDescribe.getText()).toString().trim();
+            String timeError = tvTime.getText().toString().trim();
             String image1 = convertImageViewToBase64(imgError1);
             String image2 = convertImageViewToBase64(imgError2);
             if (!error.isEmpty() && !describeError.isEmpty() && !timeError.isEmpty() && image1 != null && image2 != null){
@@ -80,6 +86,7 @@ public class HelpActivity extends AppCompatActivity {
                 Toast.makeText(HelpActivity.this, "Bạn phải điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
             }
         });
+
         networkChangeReceiver = new NetworkChangeReceiver();
     }
 
@@ -120,7 +127,7 @@ public class HelpActivity extends AppCompatActivity {
     private void initData() {
         edtError = findViewById(R.id.edtError);
         edtDescribe = findViewById(R.id.edtDescribe);
-        edtTime = findViewById(R.id.edtTime);
+        tvTime = findViewById(R.id.tvTime);
         imgError1 = findViewById(R.id.imgError1);
         imgError2 = findViewById(R.id.imgError2);
         btnGuiError = findViewById(R.id.btnGuiError);

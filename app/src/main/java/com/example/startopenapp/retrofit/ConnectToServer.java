@@ -1,7 +1,7 @@
 package com.example.startopenapp.retrofit;
 
 public class ConnectToServer {
-    static String localhost = "192.168.3.86";
+    static String localhost = "192.168.3.87";
     static String insert_account_phpFilePath = "insert_account.php";
     static String insert_account_url = "http://" + localhost + "/cantin/insert_account.php/";
     static String select_account_phpFilePath = "select_account.php";
