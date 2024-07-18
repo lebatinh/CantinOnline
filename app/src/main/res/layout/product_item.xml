@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -28,7 +29,6 @@
                 android:id="@+id/itemId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Mã vật phẩm"
                 android:maxLength="20"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_describe" />
@@ -36,7 +36,6 @@
                 android:id="@+id/itemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Tên vật phẩm"
                 android:maxLines="1"
                 android:maxLength="20"
                 android:textColor="@color/black"
@@ -46,7 +45,6 @@
                 android:id="@+id/itemDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Mô tả"
                 android:maxLines="1"
                 android:maxLength="20"
                 android:textColor="@color/black"
@@ -60,18 +58,17 @@
                     android:id="@+id/itemPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Giá"
                     android:maxLength="20"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="vnđ"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
             </LinearLayout>
 
         </LinearLayout>

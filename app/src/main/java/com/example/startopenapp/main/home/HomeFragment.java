@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
         });
         imgRice.setOnClickListener(view13 -> {
             Intent intent = new Intent(requireContext(), ProductActivity.class);
-            intent.putExtra("product_type", "Cơm");
+            intent.putExtra("product_type", "Cơm/Cơm tấm");
             intent.putExtra("acc_id", stdId);
             startActivity(intent);
         });
