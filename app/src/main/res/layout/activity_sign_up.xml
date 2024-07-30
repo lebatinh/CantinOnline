@@ -101,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="@string/full_name"
+                        android:hint="@string/full_name1"
                         app:shapeAppearanceOverlay="@style/corner_20"
                         tools:ignore="HardcodedText">
 

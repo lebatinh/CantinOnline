@@ -37,6 +37,7 @@
     <string name="user_info">User information</string>
     <string name="phone_number">Phone number:</string>
     <string name="full_name">Full name :</string>
+    <string name="full_name1">Full name</string>
     <string name="birthday">Birthday :</string>
     <string name="address">Address :</string>
     <string name="hometown">Hometown :</string>

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         app:cardCornerRadius="5dp"
-        app:cardElevation="5dp"
-        android:padding="5dp">
+        app:cardElevation="5dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,23 +30,23 @@
                     android:text="@string/orders_id"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
                 <TextView
                     android:id="@+id/itemOrderId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:maxLength="20"
+                    android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" - "
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_describe" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -52,15 +54,24 @@
                     android:text="@string/total_price"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
                 <TextView
                     android:id="@+id/itemPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:maxLength="20"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vnđ"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_describe"
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,27 +84,31 @@
                     android:text="@string/id_orderer"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
                 <TextView
                     android:id="@+id/itemAccId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:maxLength="20"
+                    android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/orders_content"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_describe" />
+
             <TextView
                 android:id="@+id/itemOrder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_time" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,22 +121,23 @@
                     android:text="@string/full_name"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
                 <TextView
                     android:id="@+id/itemReceiver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:maxLength="20"
+                    android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" - "
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_describe" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -129,15 +145,16 @@
                     android:text="@string/phonenumber1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
                 <TextView
                     android:id="@+id/itemPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:maxLength="20"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,22 +167,25 @@
                     android:text="@string/payment_method"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
+
                 <TextView
                     android:id="@+id/itemPaymentMethod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:maxLength="20"
+                    android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_describe" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/itemOrderTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:maxLength="20"
                 android:gravity="end"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:layout_margin="5dp"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_time" />
         </LinearLayout>

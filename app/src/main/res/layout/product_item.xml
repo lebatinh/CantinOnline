@@ -48,7 +48,7 @@
                 android:maxLines="1"
                 android:maxLength="20"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_describe" />
+                android:textSize="@dimen/text_time" />
 
             <LinearLayout
                 android:layout_width="match_parent"

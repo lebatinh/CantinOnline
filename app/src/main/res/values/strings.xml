@@ -36,6 +36,7 @@
     <string name="user_info">Thông tin người dùng</string>
     <string name="phone_number">Số điện thoại :</string>
     <string name="full_name">Họ và tên :</string>
+    <string name="full_name1">Họ và tên</string>
     <string name="birthday">Ngày sinh :</string>
     <string name="address">Địa chỉ :</string>
     <string name="hometown">Quê quán :</string>
